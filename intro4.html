@@ -1,0 +1,21 @@
+<html>
+    <script
+     src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+    <body style="background-color: black; color: white;">
+        <div data-ng-app="myApp" data-ng-controller="myCtrl">
+            Frist Name: <input type="text" data-ng-model="fname"><br><br>
+            Last Name: <input type="text" data-ng-model="lname"><br><br>
+            <br><br><br>
+            Full Name: {{fname + " " + lname}}
+        </div>
+
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope) {
+                $scope.fname = "";
+                $scope.lname = "";
+            });
+        </script>
+    </body>
+</html>
