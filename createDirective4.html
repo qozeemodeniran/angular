@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body data-ng-app="myApp">
+
+        <!-- invoked from comment -->
+        <!-- directive: qozeem-directive -->
+
+        <script>
+            var app = angular.module("myApp", []);
+            app.directive("qozeemDirective", function() {
+                return {
+
+                    // You must add the value "M" to the restrict property to be able to invoke the directive from a comment.
+                    restrict: "M",
+
+                    // We've added the replace property in this example, otherwise the comment would be invisible.
+                    replace: true,
+                    template: "<h2>Holla, this is my first directive!!!</h2>"
+                };
+            });
+        </script>
+    </body>
+</html>

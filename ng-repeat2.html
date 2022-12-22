@@ -1,0 +1,16 @@
+<!Doctype html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body>
+        <div data-ng-app="" data-ng-init="arr=[
+        {name: 'Qozeem Odeniran', major: 'IT'},
+        {name: 'Simbiat Adebowale-Oke', major: 'Accounting'}]"
+        >
+            <ul>
+                <li data-ng-repeat="i in arr">
+                    {{i.name + ', ' + i.major}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

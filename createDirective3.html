@@ -1,0 +1,20 @@
+<!Doctype html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body data-ng-app="myApp">
+
+        <!-- invoked by class -->
+        <div class="qozeem-directive"></div>
+
+        <script>
+            var app = angular.module("myApp", []);
+            app.directive("qozeemDirective", function() {
+                return {
+                    // You must add the value "C" to the restrict property to be able to invoke the directive from a class name.
+                    restrict: "C",
+                    template: "<h2>Holla, this is my first directive!!!</h2>"
+                };
+            });
+        </script>
+    </body>
+</html>

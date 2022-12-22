@@ -1,0 +1,18 @@
+<!Doctype html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body data-ng-app="myApp">
+
+        <!-- invoked by attribute -->
+        <div qozeem-directive></div>
+
+        <script>
+            var app = angular.module("myApp", []);
+            app.directive("qozeemDirective", function() {
+                return {
+                    template: "<h2>Holla, this is my first directive!!!</h2>"
+                };
+            });
+        </script>
+    </body>
+</html>
