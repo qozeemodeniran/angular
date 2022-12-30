@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binding</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <!-- data view: using ng-bind to assign data to view model -->
+        <p ng-bind="message"></p>
+
+        <!-- data view: using {{}} to assign data to view model -->
+        <p>{{message}}</p>
+
+        <!-- data view: using ng-model(offers tow-way binding) to assign data to view model on html control such as input, select, text-area -->
+        <input ng-model="message"/>
+
+        <!-- data view: using ngclick to change content-->
+        <button ng-click="changeMessgae()">Change Message</button>
+
+
+    </div>
+</body>
+
+<!-- data model -->
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.message = "This message is for you";
+        $scope.changeMessgae = function() {
+            $scope.message = "This message has been changed!";
+        } 
+    });
+</script>
+</html>

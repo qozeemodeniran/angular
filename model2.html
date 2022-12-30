@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Validate</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
-    
+   <form data-ng-app="" name="form1">
+    Email: <input type="email" name="myform1" data-ng-model="text">
+    <span data-ng-show="form1.myform1.$error.email">Your email format is incorrect.</span>
+   </form>
 </body>
 </html>
