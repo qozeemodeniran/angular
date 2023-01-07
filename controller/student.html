@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        Enter Firstname here <br><input type="text" ng-model="firstname"/><br><br>
+        Enter Lastname here <br><input type="text" ng-model="lastname"/><br><br>
+        Enter Major here <br><input type="text" ng-model="major"/><br><br>
+        Enter CGPA here <br> <input type="text" ng-model="cgpa"/><br><br>
+
+        <p>Student Name: <strong>{{fullName()}}</strong></p>
+        <p>Major: <strong>{{major}}</strong></p>
+        <p>CGPA: <strong>{{cgpa}}</strong></p>
+    </div>
+
+    <script src="./controllers/student.js"></script>
+</body>
+</html>

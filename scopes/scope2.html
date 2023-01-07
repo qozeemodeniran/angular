@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root Scope</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    rootSCope's firstname: <h1>{{firstname}}</h1>
+
+    <div ng-controller="myCtrl">
+        controller's firstname <h1>{{firstname}}</h1>
+    </div>
+
+    <div>
+        rootScope's firstname is still: <h1>{{firstname}}</h1>
+    </div>
+    
+    <script>
+        var app = angular.module("myApp", []);
+        
+        // root scope: scope created on the HTML element that contains the ng-app directive. It's available in the entire application
+        app.run(function($rootScope) {
+            $rootScope.firstname = "Qozeem";
+        });
+
+        // scope: 
+        app.controller("myCtrl", function($scope) {
+            $scope.firstname = "Banji";
+        });
+    </script>
+</body>
+</html>

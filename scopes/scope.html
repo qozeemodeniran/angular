@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <!-- if changes is made to the view, the model and controller will be updated as well -->
+        <input ng-model="message" placeholder="Type something here!">
+        <h3>{{message}}</h3>
+    </div>
+    
+    <script>
+        // create/import angular module
+        var app = angular.module("myApp", []);
+        
+        // create controller and pass $scope object as an argument
+        app.controller("myCtrl", function($scope) {
+            $scope.message = "Holla, AngularJS is one of the best!";
+        })
+    </script>
+</body>
+</html>

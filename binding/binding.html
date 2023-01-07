@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-bind & {{}}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <!-- define Angular App and Controller here -->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        
+        <!-- bind data to html attribute here using ng-bind -->
+        <p>My firstname is <span ng-bind="firstname"></span></p>
+
+        <!-- bind data to html attribute here using double curly braces{{}} -->
+        <p>My lastname is {{lastname}}</p>
+    </div>
+</body>
+
+<script>
+    /**
+     * app variable and controller login here
+    */
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.firstname = "Qozeem";
+        $scope.lastname = "Odeniran";
+    });
+</script>
+</html>
