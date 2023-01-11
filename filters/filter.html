@@ -8,6 +8,60 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
-    
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <!-- Adding filters to expressions: uppercase is the filter here -->
+        <p>My name is {{fullname() | uppercase}}, and I am majoring in {{major | uppercase}}</p>
+
+        <h2>Other students' information...</h2>
+        <ul>
+            <!-- adding filter to directives: orderBy is the filter here -->
+            <li ng-repeat="data in info | orderBy:'lastname'">
+                {{
+                    'Firstname: ' + data.firstname + ' | ' +
+                    ' Lastname: ' + data.lastname + ' | ' +
+                    ' Major: ' + data.major
+                }} |
+
+                <!-- currency filter -->
+                School fees:  {{data.fees | currency}} 
+            </li>
+
+            <h2>Names of student(s) containing Q (or q)</h2>
+            <!-- 'filter' filter: can only be used on an arrya, and returns an array containing only the matching items -->
+            <li ng-repeat="data in info | filter: 'q'">
+                {{data.firstname + " " + data.lastname}}
+            </li>
+
+            <!-- filter array based on user input: the ng-model directive takes the filter value -->
+            <h2>Search functionality using filter</h2>
+            <p><input type="text" ng-model="test" placeholder="serach"></p>
+            <li ng-repeat="data in info | filter: test">
+                {{data.firstname + " " + data.lastname}}
+            </li>
+
+            <!-- sort array based on user input -->
+            <h2>Order table items implemented using filter</h2>
+            <table border="1" width="50%">
+                <tr>
+                    <th ng-click="myOrder('firstname')">Firstname</th>
+                    <th ng-click="myOrder('lastname')">Lastname</th>
+                </tr>
+
+                <tr ng-repeat="student in info | orderBy:Orders">
+                    <td>{{student.firstname}}</td>
+                    <td>{{student.lastname}}</td>
+                </tr>
+            </table>
+
+            <!-- use create custom filter to format every other character to uppercase -->
+            <h2>Using custome filter to format students' names</h2>
+            <li ng-repeat="data in info">
+                {{data.firstname + " " + data.lastname | myFilter}}
+            </li>
+        </ul>
+    </div>
+
+    <!-- Import controller file -->
+    <script src="./filter.js"></script>
 </body>
 </html>
