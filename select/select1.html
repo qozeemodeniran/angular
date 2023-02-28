@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Box 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <!-- create select box using ng-options -->
+        <h1>ng-oprions</h1>
+        <select ng-model="selctedName" ng-options="x for x in names"></select>
+
+        <br><br>
+        <!-- create dropdown-list using ng-repeat -->
+        <h1>ng-repeat</h1>
+        <select>
+            <option ng-repeat="x in names">{{x}}</option>
+        </select>
+
+        <!-- 
+            Because the ng-repeat directive repeats a block of HTML code for each item in an array, it can be used to create options in a dropdown list, but the ng-options directive was made especially for filling a dropdown list with options.
+         -->
+    </div>
+
+    <script src="./select.js"></script>
+</body>
+</html>

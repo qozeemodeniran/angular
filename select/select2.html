@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Box 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+         <!-- usung ng-repeat on array of objects-->
+         <h1>ng-repeat</h1>
+         <select ng-model="selectedStudent1">
+            <!-- use ng-repeat and value (instead of ng-value) -->
+            <option ng-repeat="x in students" value="{{x.name}}">{{x.name}}</option>
+         </select>
+         <h2>You chose: {{selectedStudent1}}</h2>
+
+         <hr>
+         <!-- use value instead of ng-value when using value as an object -->
+         <h1>using ng-repeat as an object</h1>
+         <select ng-model="selectedStudent2">
+            <option ng-repeat="y in students" ng-value="{{y}}">{{y.name}}</option>
+         </select>
+         <h2>You chose {{selectedStudent2.name}} of {{selectedStudent2.major}} major</h2>
+
+         <hr>
+         <!-- 
+            When the selected value is an object, it can hold more information, and your application can be more flexible.
+            We will use the ng-options
+          -->
+        <h1>using ng-options</h1>
+        <select ng-model="selectedStudent3" ng-options="z.name for z in students">
+
+        </select>
+        <h2>You chose: {{selectedStudent3.name}}</h2>
+        <h2>The student's major is: {{selectedStudent3.major}}</h2>  
+
+        <hr>
+        <!-- 
+            working with an object datasource, the ng-options becomes a bit different as follows.    
+            a represent key, and b represents value
+        -->
+        <h1>Normal Object</h1>
+        <select ng-model="selectedDev" ng-options="a for (a, b) in developers"></select>
+        <h2>You chose: {{selectedDev}}</h2>
+
+        <hr>
+        <h1>Nested object</h1>
+        <select ng-model="selectedProf" ng-options="r for (r, s) in professionals"></select>
+        <h2>You chose: {{selectedProf.name}}</h2>
+        <h2>A professional <i>{{selectedProf.job}}</i></h2>
+        <h2>Number of years of experience is <i>{{selectedProf.experience}}</i></h2>
+    </div>
+
+    <script src="./select2.js"></script>
+</body>
+</html>
