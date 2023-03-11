@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <!-- showing html section code when a button is clicked and hiding it when button is clicked again -->
+        <button ng-click="showFunc()">Shown / Hide</button>
+        <div ng-show="show">
+            <h1>Todos</h1>
+            <ul>
+                <li>Assignment <input type="checkbox"></li>
+                <li>Podcast <input type="checkbox"></li>
+                <li>Cooking <input type="checkbox"></li>
+                <li>Laundry <input type="checkbox"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./event4.js"></script>
+</body>
+</html>
