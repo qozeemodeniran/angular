@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radiobuttons</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="">
+
+    <form action="">
+        Select an option:
+        <select ng-model="message">
+            <option value=""></option>
+            <option value="fullname">Name</option>
+            <option value="major">Major</option>
+            <option value="cgpa">CGPA</option>
+        </select>
+    </form>
+
+    <div ng-switch="message">
+        <div ng-switch-when="fullname">
+            <h1>Name</h1>
+            <p>Qozeem Odeniran</p>
+        </div>
+        <div ng-switch-when="major">
+            <h1>Major</h1>
+            <p>Information Technology</p>
+        </div>
+        <div ng-switch-when="cgpa">
+            <h1>CGPA</h1>
+            <p>4.0</p>
+        </div>
+    </div>
+</body>
+</html>
